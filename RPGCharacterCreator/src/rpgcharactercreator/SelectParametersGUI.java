@@ -59,16 +59,16 @@ public class SelectParametersGUI extends JFrame {
 		mainPanel.add(button_1, BorderLayout.EAST);
 		switchPane();
 	}
-
+	
 	private void switchPane() {
 		switch (index) {
 		case 0:
 			centerPanel = new SelectClass();
 			break;
-		default:
+			default:
 			System.out.println("Error:panel index not found (SelectParametersGUI)");
 		}
-		// setContentPane(centerPanel);
+		//setContentPane(centerPanel);
 		mainPanel.add(centerPanel, BorderLayout.CENTER);
 	}
 }
