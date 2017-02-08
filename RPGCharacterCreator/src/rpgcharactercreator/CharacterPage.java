@@ -53,33 +53,35 @@ public class CharacterPage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout());
 		
-		JLabel lblNewLabel = new JLabel("Race Info");
-		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(lblNewLabel, BorderLayout.WEST);
+		JLabel classLabel = new JLabel("Race Info");
+		classLabel.setVerticalAlignment(SwingConstants.TOP);
+		contentPane.add(classLabel, BorderLayout.WEST);
 		
-		JLabel lblNewLabel_1 = new JLabel("Gear");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(lblNewLabel_1, BorderLayout.EAST);
+		JLabel raceLabel = new JLabel("Race Info");
+		raceLabel.setVerticalAlignment(SwingConstants.TOP);
+		contentPane.add(raceLabel, BorderLayout.WEST);
 		
-		JLabel label = new JLabel("");
-		contentPane.add(label, BorderLayout.CENTER);
-		
+		JLabel equpimentLabel = new JLabel("Gear");
+		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
+		contentPane.add(equpimentLabel, BorderLayout.EAST);
+
 		JLabel lblStats = new JLabel("STATS:");
 		contentPane.add(lblStats, BorderLayout.SOUTH);
-	}
-	public int[] getStats() {
-		// int health, int attack, int defense, int speed, int magic, int
-		// attackSpeed
-		int[] stats = new int[6];
-		stats[0] = health;
-		stats[1] = attack;
-		stats[2] = defense;
-		stats[3] = speed;
-		stats[4] = magic;
-		stats[5] = attackSpeed;
+		
+		for (int i = 0; i < 5; i++) {
+			final String name;
 
-		return stats;
+			switch (i) {
+			case 0:
+				name = "Warrior";
+				break;
+			default:
+				name = "N/A";
+			}
+		CharacterClass characterClass = new CharacterClass(name);
+		//classPicture.setIcon(characterClass.getPicture(name));
+		//description.setText(characterClass.getDescription(name));
 	}
 
 	public String getDescription(String name) {
