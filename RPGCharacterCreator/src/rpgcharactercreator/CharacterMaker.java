@@ -1,20 +1,21 @@
 package rpgcharactercreator;
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
 
 
-@SuppressWarnings("serial")
 public class CharacterMaker extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtEnterYourName;
+	private JTextField txtCharName;
 	private JTextField textField;
 
 
@@ -42,15 +43,36 @@ public class CharacterMaker extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(125, 150, 125, 150));
-		setContentPane(contentPane);
-		contentPane.setLayout(new BorderLayout(0, 0));
-		
-		txtEnterYourName = new JTextField();
-		txtEnterYourName.setHorizontalAlignment(SwingConstants.CENTER);
-		txtEnterYourName.setText("Enter Your Name:");
-		contentPane.add(txtEnterYourName, BorderLayout.CENTER);
-		txtEnterYourName.setColumns(10);
-	}
 
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		txtCharName = new JTextField();
+		txtCharName.setBounds(75, 50, 300, 26);
+		txtCharName.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCharName.setText("Character Name");
+		contentPane.add(txtCharName);
+		txtCharName.setColumns(10);
+		
+		JButton btnCreate = new JButton("Create Character");
+		btnCreate.setBounds(75, 200, 300, 29);
+		contentPane.add(btnCreate);
+		
+		JComboBox raceBox = new JComboBox();
+		raceBox.setBounds(6, 125, 100, 27);
+		contentPane.add(raceBox);
+		
+		JComboBox classBox = new JComboBox();
+		classBox.setToolTipText("");
+		classBox.setBounds(118, 125, 100, 27);
+		contentPane.add(classBox);
+		
+		JComboBox weaponBox = new JComboBox();
+		weaponBox.setBounds(230, 125, 100, 27);
+		contentPane.add(weaponBox);
+		
+		JComboBox armorBox = new JComboBox();
+		armorBox.setBounds(344, 125, 100, 27);
+		contentPane.add(armorBox);
+	}
 }
