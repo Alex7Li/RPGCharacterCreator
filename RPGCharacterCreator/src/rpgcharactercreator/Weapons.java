@@ -1,6 +1,5 @@
 package rpgcharactercreator;
 
-import simko.inheritence.ModifiesStats;
 
 public class Weapons extends CharacterClass implements ModifiesStats{
 	private int attack;
@@ -47,30 +46,5 @@ public class Weapons extends CharacterClass implements ModifiesStats{
 			 attackSpeed = 20;
 			 health = 5;
 		}
-		
-		
-		
-	}
-
-	@Override
-	public int getStats(int attack, int defense, int speed, int magic, int attackSpeed, int health) {
-		
-		return 0;
-	}
-
-	@Override
-	public void select() {
-		
-		
-	}
-
-	@Override
-	public void deselect() {
-		
-		
-	}
-	
-		
-	
-
+		}
 }
