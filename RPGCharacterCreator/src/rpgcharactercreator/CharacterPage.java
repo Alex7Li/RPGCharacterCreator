@@ -43,7 +43,7 @@ public class CharacterPage extends JFrame {
 		
 		JLabel classPicture = new JLabel("");
 		classPicture.setHorizontalAlignment(SwingConstants.CENTER);
-		classPicture.setIcon(new ImageIcon("mario.jpg"));
+		classPicture.setIcon(new ImageIcon("archer.jpg"));
 		contentPane.add(classPicture, BorderLayout.CENTER);
 		
 		JLabel classLabel = new JLabel("Class Info");
@@ -85,16 +85,16 @@ public class CharacterPage extends JFrame {
 		String weaponName;
 			switch(weapons){
 			case 1:
-				weaponName = "Warrior";
+				weaponName = "Long Sword";
 				break;
 			case 2:
-				weaponName = "Archer";
+				weaponName = "Oak Bow";
 				break;
 			case 3:
-				weaponName = "Assassin";
+				weaponName = "Staff of Eden";
 				break;
 			case 4:
-				weaponName = "Mage";
+				weaponName = "Dragon Breaths Dagger";
 				break;
 			default:
 				weaponName = "N/A";
@@ -103,16 +103,16 @@ public class CharacterPage extends JFrame {
 		String armorName;
 			switch(armor){
 			case 1:
-				armorName = "Warrior";
+				armorName = "Elistans Defender";
 				break;
 			case 2:
-				armorName = "Archer";
+				armorName = "Daedrics Blood";
 				break;
 			case 3:
-				armorName = "Assassin";
+				armorName = "Stormcloak";
 				break;
 			case 4:
-				armorName = "Mage";
+				armorName = "Armor of Altair";
 				break;
 			default:
 				armorName = "N/A";
