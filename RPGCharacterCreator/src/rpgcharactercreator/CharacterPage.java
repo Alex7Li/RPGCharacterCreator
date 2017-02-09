@@ -110,18 +110,11 @@ public class CharacterPage extends JFrame {
 				weaponName = "Mage";
 				break;
 			}
-<<<<<<< HEAD
-		CharacterClass characterClass = new CharacterClass(name);
-		classPicture.setIcon(characterClass.getPicture(name));
-		classLabel.setText(characterClass.getDescription(name));
-		}
-=======
-			
+	
 		CharacterClass characterClass = new CharacterClass(className);
 		classPicture.setIcon(characterClass.getPicture(className));
 		classLabel.setText(characterClass.getDescription(className));
 		
->>>>>>> branch 'master' of https://github.com/Alex7Li/RPGCharacterCreator.git
 	}
 
 	public String getDescription(String name) {
