@@ -28,24 +28,15 @@ public class CharacterPage extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CharacterPage frame = new CharacterPage();
-					frame.setVisible(true);
-					frame.setTitle("Character Information Page");
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
+	 * @param m 
+	 * @param l 
+	 * @param k 
+	 * @param j 
 	 */
-	public CharacterPage() {
+	public CharacterPage(int race, int clas, int weapons, int armorm) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

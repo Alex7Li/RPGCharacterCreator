@@ -31,6 +31,10 @@ public class SelectParametersGUI extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param armor 
+	 * @param weapons 
+	 * @param class 
+	 * @param race 
 	 */
 
 	public SelectParametersGUI() {
