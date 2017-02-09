@@ -76,6 +76,15 @@ public class CharacterPage extends JFrame {
 			case 0:
 				name = "Warrior";
 				break;
+			case 1:
+				name = "Archer";
+				break;
+			case 2:
+				name = "Assassin";
+				break;
+			case 3:
+				name = "Mage";
+				break;
 			default:
 				name = "N/A";
 			}
@@ -88,6 +97,8 @@ public class CharacterPage extends JFrame {
 	public String getDescription(String name) {
 		switch (name) {
 		case "Warrior":
+			return "A fierce fighter who relies on brute force.";
+		case "Archer":
 			return "A fierce fighter who relies on brute force.";
 		default:
 			return "Error.";
