@@ -10,6 +10,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JTextArea;
 import javax.swing.DropMode;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -44,6 +45,11 @@ public class CharacterPage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout());
 		
+		JLabel classPicture = new JLabel("");
+		classPicture.setHorizontalAlignment(SwingConstants.CENTER);
+		this.add(classPicture, BorderLayout.CENTER);
+		classPicture.setIcon(new ImageIcon("mario.jpg"));
+		
 		JLabel classLabel = new JLabel("Race Info");
 		classLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(classLabel, BorderLayout.WEST);
@@ -56,6 +62,7 @@ public class CharacterPage extends JFrame {
 		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(equpimentLabel, BorderLayout.EAST);
+
 
 		JLabel lblStats = new JLabel("STATS:");
 		contentPane.add(lblStats, BorderLayout.SOUTH);
@@ -77,8 +84,7 @@ public class CharacterPage extends JFrame {
 				break;
 			default:
 				className = "N/A";
-			}
-				
+			}				
 		String weaponName;
 			switch(weapons){
 			case 4:
@@ -107,10 +113,12 @@ public class CharacterPage extends JFrame {
 			case 12:
 				weaponName = "Mage";
 				break;
-
-		//classPicture.setIcon(characterClass.getPicture(name));
-		//description.setText(characterClass.getDescription(name));
-		}
+			}
+			
+		CharacterClass characterClass = new CharacterClass(className);
+		classPicture.setIcon(characterClass.getPicture(className));
+		classLabel.setText(characterClass.getDescription(className));
+		
 	}
 
 	public String getDescription(String name) {

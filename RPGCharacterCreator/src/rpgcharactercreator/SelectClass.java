@@ -26,10 +26,6 @@ public class SelectClass extends JPanel{
 	 * Create the panel.
 	 */
 	public SelectClass() {
-		myPictureLbl = new JLabel("");
-		myPictureLbl.setHorizontalAlignment(SwingConstants.CENTER);
-		this.add(myPictureLbl, BorderLayout.CENTER);
-		myPictureLbl.setIcon(new ImageIcon("mario.jpg"));
 		
 		description = new JTextField();
 		this.add(description, BorderLayout.SOUTH);
