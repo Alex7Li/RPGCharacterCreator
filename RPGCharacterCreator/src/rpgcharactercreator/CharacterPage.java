@@ -36,7 +36,7 @@ public class CharacterPage extends JFrame {
 	 * @param k 
 	 * @param j 
 	 */
-	public CharacterPage(int race, int clas, int weapons, int armorm) {
+	public CharacterPage(int race, int clas, int weapons, int armor) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -60,26 +60,54 @@ public class CharacterPage extends JFrame {
 		JLabel lblStats = new JLabel("STATS:");
 		contentPane.add(lblStats, BorderLayout.SOUTH);
 		
-		for (int i = 0; i < 5; i++) {
-			final String name;
-
-			switch (i) {
-			case 0:
-				name = "Warrior";
-				break;
+		
+		String className;
+			switch (clas) {
 			case 1:
-				name = "Archer";
+				className = "Warrior";
 				break;
 			case 2:
-				name = "Assassin";
+				className = "Archer";
 				break;
 			case 3:
-				name = "Mage";
+				className = "Assassin";
+				break;
+			case 4:
+				className = "Mage";
 				break;
 			default:
-				name = "N/A";
+				className = "N/A";
 			}
-		CharacterClass characterClass = new CharacterClass(name);
+				
+		String weaponName;
+			switch(weapons){
+			case 4:
+				weaponName = "Warrior";
+				break;
+			case 5:
+				weaponName = "Archer";
+				break;
+			case 6:
+				weaponName = "Assassin";
+				break;
+			case 7:
+				weaponName = "Mage";
+				break;
+			
+		//String armorName;
+			case 9:
+				weaponName = "Warrior";
+				break;
+			case 10:
+				weaponName = "Archer";
+				break;
+			case 11:
+				weaponName = "Assassin";
+				break;
+			case 12:
+				weaponName = "Mage";
+				break;
+
 		//classPicture.setIcon(characterClass.getPicture(name));
 		//description.setText(characterClass.getDescription(name));
 		}
