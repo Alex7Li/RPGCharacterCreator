@@ -87,18 +87,21 @@ public class CharacterPage extends JFrame {
 			}				
 		String weaponName;
 			switch(weapons){
-			case 4:
+			case 1:
 				weaponName = "Warrior";
 				break;
-			case 5:
+			case 2:
 				weaponName = "Archer";
 				break;
-			case 6:
+			case 3:
 				weaponName = "Assassin";
 				break;
-			case 7:
+			case 4:
 				weaponName = "Mage";
 				break;
+			default:
+				className = "N/A";
+			
 			
 		//String armorName;
 			case 9:
