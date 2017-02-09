@@ -82,6 +82,7 @@ public class CharacterPage extends JFrame {
 		CharacterClass characterClass = new CharacterClass(name);
 		//classPicture.setIcon(characterClass.getPicture(name));
 		//description.setText(characterClass.getDescription(name));
+		}
 	}
 
 	public String getDescription(String name) {
