@@ -59,8 +59,8 @@ public class SelectClass extends JPanel{
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					characterClass = new CharacterClass(name);
-					myPictureLbl.setIcon(characterClass.getPicture(name));
-					description.setText(characterClass.getDescription(name));
+					myPictureLbl.setIcon(characterClass.getPicture());
+					description.setText(characterClass.getDescription());
 				}
 			});
 		}

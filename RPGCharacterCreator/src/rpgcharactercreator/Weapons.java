@@ -1,5 +1,6 @@
 package rpgcharactercreator;
 
+import javax.swing.Icon;
 
 public class Weapons extends CharacterClass implements ModifiesStats{
 	private int attack;
@@ -8,6 +9,8 @@ public class Weapons extends CharacterClass implements ModifiesStats{
 	private int magic;
 	private int attackSpeed;
 	private int health;
+	private String description;
+	private Icon picture;
 
 	public Weapons(String name) {
 		super(name);
@@ -47,4 +50,11 @@ public class Weapons extends CharacterClass implements ModifiesStats{
 			 health = 5;
 		}
 		}
+	public String getDescription() {
+		return description;
+	}
+
+	public Icon getPicture() {
+		return picture;
+	}
 }

@@ -1,6 +1,7 @@
 package rpgcharactercreator;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 public class CharacterClass implements ModifiesStats {
 	private int health;
@@ -26,20 +27,6 @@ public class CharacterClass implements ModifiesStats {
 		return stats;
 	}
 
-	public String getDescription(String name) {
-		switch (name) {
-		case "Warrior":
-			return "A fierce fighter who relies on brute force.";
-		default:
-			return "Error.";
-		}
-	}
-
-	public Icon getPicture(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Override
 	public void select(String name) {
 		switch (name) {
@@ -50,6 +37,8 @@ public class CharacterClass implements ModifiesStats {
 			magic = 40;
 			attackSpeed = 50;
 			health = 70;
+			description = "A fierce fighter who relies on brute force.";
+			picture = new ImageIcon("warrior.jpg");
 			break;
 
 		case "Archer":
@@ -84,6 +73,13 @@ public class CharacterClass implements ModifiesStats {
 			break;
 
 		}
+	}
+	public String getDescription() {
+		return description;
+	}
+
+	public Icon getPicture() {
+		return picture;
 	}
 
 }
