@@ -96,10 +96,11 @@ public class CharacterPage extends JFrame {
 				weaponName = "Mage";
 				break;
 			default:
-				className = "N/A";
+				weaponName = "N/A";
 			
 			
-		//String armorName;
+		String armorName;
+			switch(armor){
 			case 9:
 				weaponName = "Warrior";
 				break;
@@ -112,12 +113,14 @@ public class CharacterPage extends JFrame {
 			case 12:
 				weaponName = "Mage";
 				break;
+			default:
+				armorName = "N/A";
 			}
 	
 		CharacterClass characterClass = new CharacterClass(className);
 		classPicture.setIcon(characterClass.getPicture(className));
 		classLabel.setText(characterClass.getDescription(className));
-		
+		}	
 	}
 
 	public String getDescription(String name) {
