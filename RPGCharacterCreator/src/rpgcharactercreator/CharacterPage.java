@@ -10,6 +10,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JTextArea;
 import javax.swing.DropMode;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -44,6 +45,11 @@ public class CharacterPage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout());
 		
+		JLabel classPicture = new JLabel("");
+		classPicture.setHorizontalAlignment(SwingConstants.CENTER);
+		this.add(classPicture, BorderLayout.CENTER);
+		classPicture.setIcon(new ImageIcon("mario.jpg"));
+		
 		JLabel classLabel = new JLabel("Race Info");
 		classLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(classLabel, BorderLayout.WEST);
@@ -71,8 +77,9 @@ public class CharacterPage extends JFrame {
 				name = "N/A";
 			}
 		CharacterClass characterClass = new CharacterClass(name);
-		//classPicture.setIcon(characterClass.getPicture(name));
+		classPicture.setIcon(characterClass.getPicture(name));
 		classLabel.setText(characterClass.getDescription(name));
+		
 		}
 	}
 
