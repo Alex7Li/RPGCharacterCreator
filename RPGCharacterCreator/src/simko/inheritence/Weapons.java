@@ -1,7 +1,7 @@
 package simko.inheritence;
 
 import rpgcharactercreator.CharacterClass;
-import simko.inheritence.ModifiesStats;
+import rpgcharactercreator.ModifiesStats;
 
 public class Weapons extends CharacterClass implements ModifiesStats{
 	private int attack;

@@ -1,7 +1,5 @@
 package rpgcharactercreator;
 
-import simko.inheritence.ModifiesStats;
-
 public class Defenses extends CharacterClass implements ModifiesStats{
 	private int attack;
 	private int defense;
@@ -46,31 +44,9 @@ public class Defenses extends CharacterClass implements ModifiesStats{
 			 magic = -10;
 			 attackSpeed = 15;
 			 health = 5;
-			 
-			 
-		
-		
 		
 		
 		}
-		
-	}
-
-	@Override
-	public int getStats(int attack, int defense, int speed, int magic, int attackSpeed, int health) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void select() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deselect() {
-		// TODO Auto-generated method stub
 		
 	}
 
