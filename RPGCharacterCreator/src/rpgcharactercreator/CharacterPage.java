@@ -1,18 +1,14 @@
 package rpgcharactercreator;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
-import javax.swing.JTextArea;
-import javax.swing.DropMode;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class CharacterPage extends JFrame {
 
@@ -117,7 +113,7 @@ public class CharacterPage extends JFrame {
 				weaponName = "Mage";
 				break;
 			}
-			
+	
 		CharacterClass characterClass = new CharacterClass(className);
 		classPicture.setIcon(characterClass.getPicture(className));
 		classLabel.setText(characterClass.getDescription(className));
