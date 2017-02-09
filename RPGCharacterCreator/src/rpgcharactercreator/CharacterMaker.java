@@ -62,18 +62,6 @@ public class CharacterMaker extends JFrame {
 		contentPane.add(txtCharName);
 		txtCharName.setColumns(10);
 		
-		JButton btnCreate = new JButton("Create Character");
-		btnCreate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CharacterPage frame = new CharacterPage();
-				frame.setSize(700, 400);
-				frame.setVisible(true);
-				frame.setTitle("RPG Character Creator");
-			}
-		});
-		btnCreate.setBounds(75, 200, 300, 29);
-		contentPane.add(btnCreate);
-		
 		JComboBox raceBox = new JComboBox();
 		raceBox.setModel(new DefaultComboBoxModel(new String[] {"[Race]", "Human", "Elf", "Dwarf", "Goblin"}));
 		raceBox.setToolTipText("");
@@ -96,6 +84,19 @@ public class CharacterMaker extends JFrame {
 		armorBox.setBounds(344, 125, 100, 27);
 		contentPane.add(armorBox);
 		//setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, txtCharName, btnCreate, raceBox, classBox, weaponBox, armorBox}));
+
+		JButton btnCreate = new JButton("Create Character");
+		btnCreate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CharacterPage frame = new CharacterPage(raceBox.getSelectedIndex(),
+						classBox.getSelectedIndex(),weaponBox.getSelectedIndex(), armorBox.getSelectedIndex());
+				frame.setSize(700, 400);
+				frame.setVisible(true);
+				frame.setTitle("RPG Character Creator");
+			}
+		});
+		btnCreate.setBounds(75, 200, 300, 29);
+		contentPane.add(btnCreate);
 	}
 }
 
