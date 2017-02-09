@@ -41,6 +41,15 @@ public class SelectClass extends JPanel{
 			case 0:
 				name = "Warrior";
 				break;
+			case 1:
+				name = "Archer";
+				break;
+			case 2:
+				name = "Assassin";
+				break;
+			case 3:
+				name = "Mage";
+				break;
 			default:
 				name = "N/A";
 			}

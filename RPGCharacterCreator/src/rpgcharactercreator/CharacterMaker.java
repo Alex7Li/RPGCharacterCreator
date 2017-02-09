@@ -84,6 +84,7 @@ public class CharacterMaker extends JFrame {
 		armorBox.setBounds(344, 125, 100, 27);
 		contentPane.add(armorBox);
 		//setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, txtCharName, btnCreate, raceBox, classBox, weaponBox, armorBox}));
+
 		JButton btnCreate = new JButton("Create Character");
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
