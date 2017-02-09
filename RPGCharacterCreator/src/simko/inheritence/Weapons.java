@@ -1,5 +1,6 @@
-package rpgcharactercreator;
+package simko.inheritence;
 
+import rpgcharactercreator.CharacterClass;
 import simko.inheritence.ModifiesStats;
 
 public class Weapons extends CharacterClass implements ModifiesStats{
