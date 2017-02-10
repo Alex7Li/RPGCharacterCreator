@@ -21,7 +21,9 @@ public class Armor implements ModifiesStats{
 			 speed =  -5;
 			 magic =  -10;
 			 attackSpeed = -5;
-			 health = 30; break;
+			 health = 30;
+			 description = "An ancient warriors armor who dies in battle.";
+			 break;
 			 
 		case "Daedrics Blood":
 			attack = -10;
@@ -29,7 +31,9 @@ public class Armor implements ModifiesStats{
 			 speed = 10 ;
 			 magic = 20 ;
 			 attackSpeed = 5;
-			 health = 5; break;
+			 health = 5;
+			 description = "The daedrics god light weight armor";
+			 break;
 			 
 		case "Stormcloak":
 			attack = 15;
@@ -37,7 +41,9 @@ public class Armor implements ModifiesStats{
 			 speed = 10 ;
 			 magic = 5 ;
 			 attackSpeed = 10;
-			 health = 5; break;
+			 health = 5; 
+			 description = "The Stormcloaks ancient magic armor.";
+			 break;
 			 
 		case "Armor of Altair":
 			attack = 15;
@@ -45,7 +51,9 @@ public class Armor implements ModifiesStats{
 			 speed =  15;
 			 magic = -10;
 			 attackSpeed = 15;
-			 health = 5; break;
+			 health = 5; 
+			 description = "Altair's armor that was recovered after his death.";
+			 break;
 		default:
 			System.out.println("armor error");
 		
