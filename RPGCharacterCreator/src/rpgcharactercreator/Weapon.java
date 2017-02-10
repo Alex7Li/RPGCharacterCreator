@@ -21,6 +21,7 @@ public class Weapon implements ModifiesStats{
 			 speed = 10 ;
 			 magic = 0 ;
 			 attackSpeed = 15;
+			 description = "A simple yet deadly sword.";
 			 health = 10; break;
 			 
 		case "Oak Bow":
@@ -29,6 +30,7 @@ public class Weapon implements ModifiesStats{
 			 speed = 15 ;
 			 magic = 5 ;
 			 attackSpeed = 20;
+			 description = "A plain oak bow.";
 			 health = 5; break;
 			 
 		case "Staff of Eden":
@@ -37,6 +39,7 @@ public class Weapon implements ModifiesStats{
 			 speed = 15 ;
 			 magic = 20 ;
 			 attackSpeed = 10;
+			 description = "A powerful staff crafted from the tree of Eden.";
 			 health = 7; break;
 			 
 		case "Dragon Breaths Dagger":
@@ -45,6 +48,7 @@ public class Weapon implements ModifiesStats{
 			 speed = 10 ;
 			 magic = 0 ;
 			 attackSpeed = 20;
+			 description = "A powerful dagger forged by drgaons breath.";
 			 health = 5;
 			 break;
 			 
