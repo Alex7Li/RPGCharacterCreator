@@ -3,13 +3,15 @@ package rpgcharactercreator;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.ImageIcon;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 @SuppressWarnings("serial")
@@ -21,6 +23,7 @@ public class CharacterPage extends JFrame {
 	private int speed;
 	private int magic;
 	private int attackSpeed;
+	Player player;
 
 	private JPanel contentPane;
 	JLabel lblStats = new JLabel("Stats: ");
@@ -151,13 +154,31 @@ public class CharacterPage extends JFrame {
 		text.append("<br>Speed " + speed);
 		text.append("<br>Magic " + magic);
 		text.append("<br>Attack Speed " + attackSpeed + "</html>");
-		
+		player = new Player(attack, defense, speed, magic, attackSpeed, health, "/" + characterClass.getPicture());
 		lblStats.setText(text.toString());
 		lblStats.setBounds(5, 50, 500, 85);
 		contentPane.add(lblStats, BorderLayout.SOUTH);
 		
 		JLabel namelbl = new JLabel(name);
-		namelbl.setBounds(22, 16, 120, 43);
+		namelbl.setBounds(10, 10, 80, 30);
 		contentPane.add(namelbl);
+		
+		JButton btnBattle = new JButton("Battle!");
+		btnBattle.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							FightPage frame = new FightPage(player);
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btnBattle.setBounds(388, 280, 117, 29);
+		contentPane.add(btnBattle);
 	}
 }

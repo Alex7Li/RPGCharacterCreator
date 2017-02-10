@@ -18,7 +18,6 @@ public class CharacterMaker extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtCharName;
-	private JTextField textField;
 
 
 	/**
@@ -41,6 +40,7 @@ public class CharacterMaker extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public CharacterMaker() {
 		setType(Type.POPUP);
 		setResizable(false);
