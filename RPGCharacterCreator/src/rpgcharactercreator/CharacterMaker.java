@@ -84,7 +84,7 @@ public class CharacterMaker extends JFrame {
 		JButton btnCreate = new JButton("Create Character");
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CharacterPage frame = new CharacterPage(raceBox.getSelectedIndex(),
+				CharacterPage frame = new CharacterPage(txtCharName.getText(), raceBox.getSelectedIndex(),
 						classBox.getSelectedIndex(),weaponBox.getSelectedIndex(), armorBox.getSelectedIndex());
 				frame.setSize(700, 400);
 				frame.setVisible(true);

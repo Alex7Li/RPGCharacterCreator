@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 
 @SuppressWarnings("serial")
@@ -31,7 +32,7 @@ public class CharacterPage extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CharacterPage frame = new CharacterPage(1,4,1,1);
+					CharacterPage frame = new CharacterPage("joe",1,4,1,1);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +48,7 @@ public class CharacterPage extends JFrame {
 	 * @param k 
 	 * @param j 
 	 */
-	public CharacterPage(int race, int clas, int weapons, int armor) {
+	public CharacterPage(String name, int race, int clas, int weapons, int armor) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 100, 550, 400);
 		contentPane = new JPanel();
@@ -154,5 +155,9 @@ public class CharacterPage extends JFrame {
 		lblStats.setText(text.toString());
 		lblStats.setBounds(5, 50, 500, 85);
 		contentPane.add(lblStats, BorderLayout.SOUTH);
+		
+		JLabel namelbl = new JLabel(name);
+		namelbl.setBounds(22, 16, 120, 43);
+		contentPane.add(namelbl);
 	}
 }
