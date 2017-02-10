@@ -124,14 +124,15 @@ public class CharacterPage extends JFrame {
 //		raceLabel.setVerticalAlignment(SwingConstants.TOP);
 //		contentPane.add(raceLabel);
 		
-		JLabel equpimentLabel = new JLabel("Gear" + characterArmor.getDescription() + "/n" + characterWeapon.getDescription());
-		equpimentLabel.setBounds(22, 285, 80, 70);
+		JLabel equpimentLabel = new JLabel("<html> Armor: " + characterArmor.getDescription() + "<br> Weapon: " 
+									+characterWeapon.getDescription() + "</html>");
+		equpimentLabel.setBounds(22, 285, 180, 1170);
 		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(equpimentLabel);
 		
 		JLabel classLabel = new JLabel("Class Info: " + characterClass.getDescription());
-		classLabel.setBounds(162, 6, 355, 52);
+		classLabel.setBounds(162, 6, 655, 152);
 		classLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(classLabel);
 		
