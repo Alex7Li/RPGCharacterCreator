@@ -22,7 +22,7 @@ public class CharacterPage extends JFrame {
 	private int attackSpeed;
 
 	private JPanel contentPane;
-	JLabel lblStats = new JLabel("Stats");
+	JLabel lblStats = new JLabel("Stats: ");
 
 	/**
 	 * Launch the application.
@@ -49,7 +49,7 @@ public class CharacterPage extends JFrame {
 	 */
 	public CharacterPage(int race, int clas, int weapons, int armor) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 550, 400);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -115,7 +115,7 @@ public class CharacterPage extends JFrame {
 		CharacterClass characterClass = new CharacterClass(className);
 		
 		JLabel classPicture = new JLabel(new ImageIcon(CharacterPage.class.getResource("/" + characterClass.getPicture())));
-		classPicture.setBounds(98, 51, 306, 189);
+		classPicture.setBounds(98, 71, 306, 189);
 		classPicture.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(classPicture);
 		
@@ -125,33 +125,34 @@ public class CharacterPage extends JFrame {
 //		contentPane.add(raceLabel);
 		
 		JLabel equpimentLabel = new JLabel("Gear" + characterArmor.getDescription());
-		equpimentLabel.setBounds(5, 6, 80, 85);
+		equpimentLabel.setBounds(5, 6, 80, 185);
 		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(equpimentLabel);
 		
 		JLabel classLabel = new JLabel("Class Info: " + characterClass.getDescription());
-		classLabel.setBounds(5, 96, 195, 72);
+		classLabel.setBounds(162, 6, 355, 52);
 		classLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(classLabel);
 		equpimentLabel.setText(characterArmor.getDescription() + "/n" + characterWeapon.getDescription());
 		
 		StringBuilder text = new StringBuilder();
-		text.append("STATS:");
+		text.append("<html>STATS:");
 		health = characterClass.getHealth()+characterWeapon.getHealth()+characterArmor.getHealth();
 		attack = characterClass.getAttack()+characterWeapon.getAttack()+characterArmor.getAttack();
 		defense = characterClass.getDefense()+characterWeapon.getDefense()+characterArmor.getDefense();
 		speed = characterClass.getSpeed()+characterWeapon.getSpeed()+characterArmor.getSpeed();
 		magic = characterClass.getMagic()+characterWeapon.getMagic()+characterArmor.getMagic();
 		attackSpeed =  characterClass.getAttackSpeed()+characterWeapon.getAttackSpeed()+characterArmor.getAttackSpeed();
-		text.append("\nHealth " + health);
-		text.append("\nAttack " + attack);
-		text.append("\nDefense " + defense);
-		text.append("\nSpeed " + speed);
-		text.append("\nMagic " + magic);
-		text.append("\nAttackSpeed " + attackSpeed);
+		text.append("Health " + health);
+		text.append("Attack " + attack);
+		text.append("Defense " + defense);
+		text.append("<br>Speed " + speed);
+		text.append("<br>Magic " + magic);
+		text.append("<br>AttackSpeed " + attackSpeed + "</html>");
+		
 		lblStats.setText(text.toString());
-		lblStats.setBounds(5, 6, 80, 85);
+		lblStats.setBounds(5, 6, 500, 85);
 		contentPane.add(lblStats, BorderLayout.SOUTH);
 	}
 }
