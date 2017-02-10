@@ -3,13 +3,12 @@ package rpgcharactercreator;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 
 
 @SuppressWarnings("serial")
@@ -21,8 +20,7 @@ public class CharacterPage extends JFrame {
 	private int speed;
 	private int magic;
 	private int attackSpeed;
-	private String description;
-	private Icon picture;
+
 	private JPanel contentPane;
 	JLabel lblStats = new JLabel("Stats");
 
@@ -56,6 +54,7 @@ public class CharacterPage extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
 		
 		String className;
 			switch (clas) {
@@ -115,30 +114,26 @@ public class CharacterPage extends JFrame {
 		Armor characterArmor = new Armor(armorName);
 		CharacterClass characterClass = new CharacterClass(className);
 		
-		JLabel classPicture = new JLabel("");
+		JLabel classPicture = new JLabel(new ImageIcon(CharacterPage.class.getResource("/" + characterClass.getPicture())));
 		classPicture.setBounds(98, 51, 306, 189);
 		classPicture.setHorizontalAlignment(SwingConstants.CENTER);
-		classPicture.setIcon(characterClass.getPicture());
 		contentPane.add(classPicture);
 		
-		JLabel classLabel = new JLabel("Class Info");
-		classLabel.setBounds(5, 96, 195, 72);
-		classLabel.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(classLabel);
+//		JLabel raceLabel = new JLabel("Race Info"  + characterRace.getDescription());
+//		raceLabel.setBounds(5, 180, 195, 93);
+//		raceLabel.setVerticalAlignment(SwingConstants.TOP);
+//		contentPane.add(raceLabel);
 		
-		JLabel raceLabel = new JLabel("Race Info");
-		raceLabel.setBounds(5, 180, 195, 93);
-		raceLabel.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(raceLabel);
-		
-		JLabel equpimentLabel = new JLabel("Gear");
+		JLabel equpimentLabel = new JLabel("Gear" + characterArmor.getDescription());
 		equpimentLabel.setBounds(5, 6, 80, 85);
 		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(equpimentLabel);
 		
-		classPicture.setIcon(characterClass.getPicture());
-		classLabel.setText(characterClass.getDescription());
+		JLabel classLabel = new JLabel("Class Info: " + characterClass.getDescription());
+		classLabel.setBounds(5, 96, 195, 72);
+		classLabel.setVerticalAlignment(SwingConstants.TOP);
+		contentPane.add(classLabel);
 		equpimentLabel.setText(characterArmor.getDescription() + "/n" + characterWeapon.getDescription());
 		
 		StringBuilder text = new StringBuilder();

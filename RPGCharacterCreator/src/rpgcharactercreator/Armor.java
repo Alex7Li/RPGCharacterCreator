@@ -1,6 +1,8 @@
 package rpgcharactercreator;
 
-public class Armor extends CharacterClass implements ModifiesStats{
+import javax.swing.Icon;
+
+public class Armor implements ModifiesStats{
 	private int attack;
 	private int defense;
 	private int speed;
@@ -10,7 +12,6 @@ public class Armor extends CharacterClass implements ModifiesStats{
 	private String description;
 
 	public Armor(String name) {
-		super(name);
 		
 		switch(name){
 		
@@ -101,6 +102,21 @@ public class Armor extends CharacterClass implements ModifiesStats{
 
 	public void setHealth(int health) {
 		this.health = health;
+	}
+	@Override
+	public int[] getStats() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Icon getPicture() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void select(String name) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
