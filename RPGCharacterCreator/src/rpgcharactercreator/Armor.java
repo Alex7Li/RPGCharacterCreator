@@ -1,7 +1,5 @@
 package rpgcharactercreator;
 
-import javax.swing.Icon;
-
 public class Armor extends CharacterClass implements ModifiesStats{
 	private int attack;
 	private int defense;
@@ -10,7 +8,6 @@ public class Armor extends CharacterClass implements ModifiesStats{
 	private int attackSpeed;
 	private int health;
 	private String description;
-	private Icon picture;
 
 	public Armor(String name) {
 		super(name);
@@ -23,7 +20,7 @@ public class Armor extends CharacterClass implements ModifiesStats{
 			 speed =  -5;
 			 magic =  -10;
 			 attackSpeed = -5;
-			 health = 30;
+			 health = 30; break;
 			 
 		case "Daedrics Blood":
 			attack = -10;
@@ -31,7 +28,7 @@ public class Armor extends CharacterClass implements ModifiesStats{
 			 speed = 10 ;
 			 magic = 20 ;
 			 attackSpeed = 5;
-			 health = 5;
+			 health = 5; break;
 			 
 		case "Stormcloak":
 			attack = 15;
@@ -39,7 +36,7 @@ public class Armor extends CharacterClass implements ModifiesStats{
 			 speed = 10 ;
 			 magic = 5 ;
 			 attackSpeed = 10;
-			 health = 5;
+			 health = 5; break;
 			 
 		case "Armor of Altair":
 			attack = 15;
@@ -47,18 +44,15 @@ public class Armor extends CharacterClass implements ModifiesStats{
 			 speed =  15;
 			 magic = -10;
 			 attackSpeed = 15;
-			 health = 5;
-		
+			 health = 5; break;
+		default:
+			System.out.println("armor error");
 		
 		}
 		
 	}
 	public String getDescription() {
 		return description;
-	}
-
-	public Icon getPicture() {
-		return picture;
 	}
 
 	public int getAttack() {

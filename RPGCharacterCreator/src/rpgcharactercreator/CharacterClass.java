@@ -1,6 +1,5 @@
 package rpgcharactercreator;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class CharacterClass implements ModifiesStats {
@@ -11,7 +10,7 @@ public class CharacterClass implements ModifiesStats {
 	private int magic;
 	private int attackSpeed;
 	private String description;
-	private Icon picture;
+	private ImageIcon picture;
 
 	public CharacterClass(String name) {
 
@@ -75,7 +74,7 @@ public class CharacterClass implements ModifiesStats {
 			break;
 
 		default:
-			System.out.println("Error.");
+			System.out.println("Class error.");
 			break;
 
 		}
@@ -84,7 +83,7 @@ public class CharacterClass implements ModifiesStats {
 		return description;
 	}
 
-	public Icon getPicture() {
+	public ImageIcon getPicture() {
 		return picture;
 	}
 

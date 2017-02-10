@@ -1,7 +1,5 @@
 package rpgcharactercreator;
 
-import javax.swing.Icon;
-
 public class Weapon extends CharacterClass implements ModifiesStats{
 	private int attack;
 	private int defense;
@@ -10,7 +8,6 @@ public class Weapon extends CharacterClass implements ModifiesStats{
 	private int attackSpeed;
 	private int health;
 	private String description;
-	private Icon picture;
 
 	public Weapon(String name) {
 		super(name);
@@ -23,7 +20,7 @@ public class Weapon extends CharacterClass implements ModifiesStats{
 			 speed = 10 ;
 			 magic = 0 ;
 			 attackSpeed = 15;
-			 health = 10;
+			 health = 10; break;
 			 
 		case "Oak Bow":
 			attack = 10;
@@ -31,7 +28,7 @@ public class Weapon extends CharacterClass implements ModifiesStats{
 			 speed = 15 ;
 			 magic = 5 ;
 			 attackSpeed = 20;
-			 health = 5;
+			 health = 5; break;
 			 
 		case "Staff of Eden":
 			attack = 5;
@@ -39,7 +36,7 @@ public class Weapon extends CharacterClass implements ModifiesStats{
 			 speed = 15 ;
 			 magic = 20 ;
 			 attackSpeed = 10;
-			 health = 7;
+			 health = 7; break;
 			 
 		case "Dragon Breaths Dagger":
 			attack = 20;
@@ -48,15 +45,15 @@ public class Weapon extends CharacterClass implements ModifiesStats{
 			 magic = 0 ;
 			 attackSpeed = 20;
 			 health = 5;
+			 break;
+			 
+		default: System.out.println("failure to create weapon");
 		}
 		}
 	public String getDescription() {
 		return description;
 	}
 
-	public Icon getPicture() {
-		return picture;
-	}
 	public int getAttack() {
 		return attack;
 	}

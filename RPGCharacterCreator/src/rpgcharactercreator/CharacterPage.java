@@ -1,6 +1,7 @@
 package rpgcharactercreator;
 
 import java.awt.BorderLayout;
+import java.awt.EventQueue;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -9,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
 
 @SuppressWarnings("serial")
 public class CharacterPage extends JFrame {
@@ -22,10 +24,23 @@ public class CharacterPage extends JFrame {
 	private String description;
 	private Icon picture;
 	private JPanel contentPane;
+	JLabel lblStats = new JLabel("Stats");
 
 	/**
 	 * Launch the application.
 	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CharacterPage frame = new CharacterPage(1,1,1,1);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
@@ -40,26 +55,7 @@ public class CharacterPage extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new BorderLayout());
-		
-		JLabel classPicture = new JLabel("");
-		classPicture.setHorizontalAlignment(SwingConstants.CENTER);
-		classPicture.setIcon(new ImageIcon("archer.jpg"));
-		contentPane.add(classPicture, BorderLayout.CENTER);
-		
-		JLabel classLabel = new JLabel("Class Info");
-		classLabel.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(classLabel, BorderLayout.NORTH);
-		
-		JLabel raceLabel = new JLabel("Race Info");
-		raceLabel.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(raceLabel, BorderLayout.WEST);
-		
-		JLabel equpimentLabel = new JLabel("Gear");
-		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(equpimentLabel, BorderLayout.EAST);
-		
+		contentPane.setLayout(null);
 		
 		String className;
 			switch (clas) {
@@ -95,7 +91,7 @@ public class CharacterPage extends JFrame {
 				break;
 			default:
 				weaponName = "N/A";
-			
+			}
 			
 		String armorName;
 			switch(armor){
@@ -114,9 +110,33 @@ public class CharacterPage extends JFrame {
 			default:
 				armorName = "N/A";
 			}
+			
 		Weapon characterWeapon = new Weapon(weaponName);
 		Armor characterArmor = new Armor(armorName);
 		CharacterClass characterClass = new CharacterClass(className);
+		
+		JLabel classPicture = new JLabel("");
+		classPicture.setBounds(98, 51, 306, 189);
+		classPicture.setHorizontalAlignment(SwingConstants.CENTER);
+		classPicture.setIcon(characterClass.getPicture());
+		contentPane.add(classPicture);
+		
+		JLabel classLabel = new JLabel("Class Info");
+		classLabel.setBounds(5, 96, 195, 72);
+		classLabel.setVerticalAlignment(SwingConstants.TOP);
+		contentPane.add(classLabel);
+		
+		JLabel raceLabel = new JLabel("Race Info");
+		raceLabel.setBounds(5, 180, 195, 93);
+		raceLabel.setVerticalAlignment(SwingConstants.TOP);
+		contentPane.add(raceLabel);
+		
+		JLabel equpimentLabel = new JLabel("Gear");
+		equpimentLabel.setBounds(5, 6, 80, 85);
+		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
+		contentPane.add(equpimentLabel);
+		
 		classPicture.setIcon(characterClass.getPicture());
 		classLabel.setText(characterClass.getDescription());
 		equpimentLabel.setText(characterArmor.getDescription() + "/n" + characterWeapon.getDescription());
@@ -135,9 +155,8 @@ public class CharacterPage extends JFrame {
 		text.append("\nSpeed " + speed);
 		text.append("\nMagic " + magic);
 		text.append("\nAttackSpeed " + attackSpeed);
-		JLabel lblStats = new JLabel(text.toString());
+		lblStats.setText(text.toString());
+		lblStats.setBounds(5, 6, 80, 85);
 		contentPane.add(lblStats, BorderLayout.SOUTH);
-		}	
 	}
-
 }
