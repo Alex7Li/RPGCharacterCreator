@@ -64,10 +64,10 @@ public class CharacterPage extends JFrame {
 			case 2:
 				className = "Archer";
 				break;
-			case 3:
+			case 4:
 				className = "Assassin";
 				break;
-			case 4:
+			case 3:
 				className = "Mage";
 				break;
 	
