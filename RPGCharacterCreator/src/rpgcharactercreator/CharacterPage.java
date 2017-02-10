@@ -31,7 +31,7 @@ public class CharacterPage extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CharacterPage frame = new CharacterPage(1,1,1,1);
+					CharacterPage frame = new CharacterPage(1,4,1,1);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,7 +49,7 @@ public class CharacterPage extends JFrame {
 	 */
 	public CharacterPage(int race, int clas, int weapons, int armor) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 550, 400);
+		setBounds(200, 100, 550, 400);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -124,17 +124,17 @@ public class CharacterPage extends JFrame {
 //		raceLabel.setVerticalAlignment(SwingConstants.TOP);
 //		contentPane.add(raceLabel);
 		
-		JLabel equpimentLabel = new JLabel("Gear" + characterArmor.getDescription());
-		equpimentLabel.setBounds(5, 6, 80, 185);
-		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(equpimentLabel);
+//		JLabel equpimentLabel = new JLabel("Gear" + characterArmor.getDescription());
+//		equpimentLabel.setBounds(5, 6, 80, 185);
+//		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
+//		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
+//		equpimentLabel.setText(characterArmor.getDescription() + "/n" + characterWeapon.getDescription());
+//		contentPane.add(equpimentLabel);
 		
 		JLabel classLabel = new JLabel("Class Info: " + characterClass.getDescription());
 		classLabel.setBounds(162, 6, 355, 52);
 		classLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(classLabel);
-		equpimentLabel.setText(characterArmor.getDescription() + "/n" + characterWeapon.getDescription());
 		
 		StringBuilder text = new StringBuilder();
 		text.append("<html>STATS:");
@@ -144,15 +144,15 @@ public class CharacterPage extends JFrame {
 		speed = characterClass.getSpeed()+characterWeapon.getSpeed()+characterArmor.getSpeed();
 		magic = characterClass.getMagic()+characterWeapon.getMagic()+characterArmor.getMagic();
 		attackSpeed =  characterClass.getAttackSpeed()+characterWeapon.getAttackSpeed()+characterArmor.getAttackSpeed();
-		text.append("Health " + health);
-		text.append("Attack " + attack);
-		text.append("Defense " + defense);
+		text.append("<br>Health " + health);
+		text.append("<br>Attack " + attack);
+		text.append("<br>Defense " + defense);
 		text.append("<br>Speed " + speed);
 		text.append("<br>Magic " + magic);
-		text.append("<br>AttackSpeed " + attackSpeed + "</html>");
+		text.append("<br>Attack Speed " + attackSpeed + "</html>");
 		
 		lblStats.setText(text.toString());
-		lblStats.setBounds(5, 6, 500, 85);
+		lblStats.setBounds(5, 50, 500, 85);
 		contentPane.add(lblStats, BorderLayout.SOUTH);
 	}
 }

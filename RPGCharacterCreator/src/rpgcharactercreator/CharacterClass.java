@@ -70,7 +70,7 @@ public class CharacterClass implements ModifiesStats {
 			attackSpeed = 60;
 			health = 40;
 			description = "A cool fighter who relies on cunning strategies.";
-			picture = new ImageIcon("assasssin.jpeg");
+			picture = new ImageIcon("assassin.jpeg");
 			break;
 
 		default:
