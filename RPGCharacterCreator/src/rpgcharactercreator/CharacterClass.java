@@ -37,7 +37,7 @@ public class CharacterClass implements ModifiesStats {
 			attackSpeed = 50;
 			health = 70;
 			description = "A fierce fighter who relies on brute force.";
-			picture = new ImageIcon("warrior1.jpg");
+			picture = new ImageIcon("warrior1.jpeg");
 			break;
 
 		case "Archer":
