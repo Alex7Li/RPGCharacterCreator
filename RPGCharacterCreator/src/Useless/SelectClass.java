@@ -1,17 +1,17 @@
-package rpgcharactercreator;
-
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+package Useless;
 
 import java.awt.BorderLayout;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import rpgcharactercreator.CharacterClass;
 
 @SuppressWarnings("serial")
 public class SelectClass extends JPanel{
@@ -45,10 +45,10 @@ public class SelectClass extends JPanel{
 				name = "Archer";
 				break;
 			case 2:
-				name = "Assassin";
+				name = "Mage";
 				break;
 			case 3:
-				name = "Mage";
+				name = "Assassin";
 				break;
 			default:
 				name = "N/A";

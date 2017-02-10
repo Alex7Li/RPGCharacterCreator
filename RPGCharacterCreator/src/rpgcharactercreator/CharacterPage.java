@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+@SuppressWarnings("serial")
 public class CharacterPage extends JFrame {
 
 	private int health;
@@ -58,10 +59,6 @@ public class CharacterPage extends JFrame {
 		equpimentLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		equpimentLabel.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(equpimentLabel, BorderLayout.EAST);
-
-
-		JLabel lblStats = new JLabel("STATS:");
-		contentPane.add(lblStats, BorderLayout.SOUTH);
 		
 		
 		String className;
@@ -117,10 +114,30 @@ public class CharacterPage extends JFrame {
 			default:
 				armorName = "N/A";
 			}
-	
+		Weapon characterWeapon = new Weapon(weaponName);
+		Armor characterArmor = new Armor(armorName);
 		CharacterClass characterClass = new CharacterClass(className);
 		classPicture.setIcon(characterClass.getPicture());
 		classLabel.setText(characterClass.getDescription());
+		equpimentLabel.setText(characterArmor.getDescription() + "/n" + characterWeapon.getDescription());
+		
+		StringBuilder text = new StringBuilder();
+		text.append("STATS:");
+		health = characterClass.getHealth()+characterWeapon.getHealth()+characterArmor.getHealth();
+		attack = characterClass.getAttack()+characterWeapon.getAttack()+characterArmor.getAttack();
+		defense = characterClass.getDefense()+characterWeapon.getDefense()+characterArmor.getDefense();
+		speed = characterClass.getSpeed()+characterWeapon.getSpeed()+characterArmor.getSpeed();
+		magic = characterClass.getMagic()+characterWeapon.getMagic()+characterArmor.getMagic();
+		attackSpeed =  characterClass.getAttackSpeed()+characterWeapon.getAttackSpeed()+characterArmor.getAttackSpeed();
+		text.append("\nHealth " + health);
+		text.append("\nAttack " + attack);
+		text.append("\nDefense " + defense);
+		text.append("\nSpeed " + speed);
+		text.append("\nMagic " + magic);
+		text.append("\nAttackSpeed " + attackSpeed);
+		JLabel lblStats = new JLabel(text.toString());
+		contentPane.add(lblStats, BorderLayout.SOUTH);
 		}	
 	}
+
 }

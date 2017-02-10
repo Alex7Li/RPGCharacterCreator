@@ -1,4 +1,4 @@
-package rpgcharactercreator;
+package Useless;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

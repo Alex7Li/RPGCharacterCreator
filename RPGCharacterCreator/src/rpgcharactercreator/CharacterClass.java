@@ -48,6 +48,8 @@ public class CharacterClass implements ModifiesStats {
 			magic = 50;
 			attackSpeed = 75;
 			health = 35;
+			description = "A guys who shoots arrows";
+			picture = new ImageIcon("archer.jpeg");
 			break;
 
 		case "Mage":
@@ -57,6 +59,8 @@ public class CharacterClass implements ModifiesStats {
 			magic = 80;
 			attackSpeed = 40;
 			health = 50;
+			description = "A magical fighter who uses magic.";
+			picture = new ImageIcon("mage.jpeg");
 			break;
 
 		case "Assassin":
@@ -66,6 +70,8 @@ public class CharacterClass implements ModifiesStats {
 			magic = 20;
 			attackSpeed = 60;
 			health = 40;
+			description = "A cool fighter who relies on cunning strategies.";
+			picture = new ImageIcon("assasssin.jpeg");
 			break;
 
 		default:
@@ -80,6 +86,30 @@ public class CharacterClass implements ModifiesStats {
 
 	public Icon getPicture() {
 		return picture;
+	}
+
+	public int getHealth() {
+		return health;
+	}
+
+	public int getAttack() {
+		return attack;
+	}
+
+	public int getDefense() {
+		return defense;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public int getMagic() {
+		return magic;
+	}
+
+	public int getAttackSpeed() {
+		return attackSpeed;
 	}
 
 }

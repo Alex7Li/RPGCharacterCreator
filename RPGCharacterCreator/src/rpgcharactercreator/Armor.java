@@ -2,7 +2,7 @@ package rpgcharactercreator;
 
 import javax.swing.Icon;
 
-public class Defenses extends CharacterClass implements ModifiesStats{
+public class Armor extends CharacterClass implements ModifiesStats{
 	private int attack;
 	private int defense;
 	private int speed;
@@ -12,7 +12,7 @@ public class Defenses extends CharacterClass implements ModifiesStats{
 	private String description;
 	private Icon picture;
 
-	public Defenses(String name) {
+	public Armor(String name) {
 		super(name);
 		
 		switch(name){
