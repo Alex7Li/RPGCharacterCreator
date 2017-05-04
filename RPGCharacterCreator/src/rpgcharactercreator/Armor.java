@@ -113,17 +113,17 @@ public class Armor implements ModifiesStats{
 	}
 	@Override
 	public int[] getStats() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	@Override
 	public Icon getPicture() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	@Override
 	public void select(String name) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

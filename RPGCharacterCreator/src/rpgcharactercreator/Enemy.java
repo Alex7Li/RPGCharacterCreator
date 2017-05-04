@@ -4,7 +4,7 @@ public class Enemy extends Character{
 
 	public Enemy(int weapon, int armor, int clas, String image) {
 		super(weapon, armor, clas, image);
-		// TODO Auto-generated constructor stub
+		
 	}
 	public static String getRandImage(){
 		int rand = (int) ((Math.random()*4)+1);
